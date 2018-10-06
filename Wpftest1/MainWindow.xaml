@@ -1,0 +1,72 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpftest1"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="Wpftest1.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" MouseMove="Window_MouseMove">
+    <Window.Resources>
+        <Storyboard x:Key="Storyboard1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="60.226"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-5.929"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-186.408"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <Button x:Name="buttonct" Content="Connect" Margin="40,33,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="61" Click="buttonct_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FFDC5F5F" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBlock x:Name="textBlock" Height="17.5" Margin="187.5,62.5,257,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Right" Height="40" Margin="0,54,165,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="59"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="59.5,135.5,0,155" Width="66.5" Background="#FFB8C754"/>
+        <ed:RegularPolygon Fill="#FFF04D0F" InnerRadius="0.47211" Margin="182.5,101,226,127" PointCount="5" Stretch="Fill"/>
+        <ed:Arc ArcThickness="0" ArcThicknessUnit="Pixel" EndAngle="90" Fill="#FFF05419" HorizontalAlignment="Right" Margin="0,132.5,113.5,120" Stretch="None" StartAngle="0" Width="73" Stroke="#FFCD4C4C"/>
+        <ListBox x:Name="listBox" Height="56.5" Margin="0,0,101.5,64.197" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="85">
+            <ListBoxItem Content="ListBoxItem1" Background="#FFA8BF13"/>
+            <ListBoxItem Content="ListBoxItem2" Background="#FFB81E1E"/>
+            <ListBoxItem Content="ListBoxItem3" Background="#FF19914F"/>
+        </ListBox>
+        <Rectangle x:Name="rectangle" Fill="#FFD65A2B" HorizontalAlignment="Left" Height="67.5" Margin="103.5,0,0,53.197" Stroke="Black" VerticalAlignment="Bottom" Width="12.5" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="40,64,0,0" VerticalAlignment="Top" Width="74" Click="btnSend_Click"/>
+        <Button x:Name="button1" Content="Recieve" HorizontalAlignment="Left" Margin="40,101,0,0" VerticalAlignment="Top" Width="76" Click="button1_Click"/>
+        <Button x:Name="button" HorizontalAlignment="Left" Margin="398,56,0,0" VerticalAlignment="Top" Width="84" Height="67">
+            <StackPanel Height="52" Width="58">
+                <Ellipse Fill="Red" Height="24" Margin="0,0,10,0"/>
+                <Ellipse Fill="Red" Height="16" Margin="0,0,10,0"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>
