@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -44,7 +45,8 @@ namespace Wpftest1
 
                     Console.WriteLine("Connecting...");
                 //client.Connect(ipe); //连接到服务器
-                client.Connect();
+                Thread t=new Thread(new ThreadStart(client.Connect));
+                t.Start();
 
 
             }
@@ -76,7 +78,7 @@ namespace Wpftest1
                 }
                 Console.WriteLine("{0}", oo);    //回显服务器的返回信息
                 Console.WriteLine("Send message");
-                client.socketOne.Send(bs, bs.Length, 0); //发送信息到服务器端
+                client.socketOne.Send(bs, bs.Length, SocketFlags.None);
         }
              catch (ArgumentException ae)
             {
