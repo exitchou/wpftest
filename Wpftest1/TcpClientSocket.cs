@@ -13,12 +13,13 @@ namespace Wpftest1
     {
         int port;
         string host;
+        public Socket socketOne { get; set; }
         public TcpClientSocket(int inport, string inhost)
         {
             port = inport;
             host = inhost;
         }
-        public Socket connect()
+        public void Connect()
         {
 
 
@@ -27,14 +28,13 @@ namespace Wpftest1
             IPEndPoint ipe = new IPEndPoint(ip, port);   //把ip和端口转化为IPEndPoint的实例
 
             //创建Socket并连接到服务器
-            Socket c = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);   //  创建Socket
+            socketOne = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);   //  创建Socket
             Console.WriteLine("Connecting...");
-            c.Connect(ipe); //连接到服务器
-            return c;
+            socketOne.Connect(ipe); //连接到服务器
         }
 
 
-        
+
     }
     
 }

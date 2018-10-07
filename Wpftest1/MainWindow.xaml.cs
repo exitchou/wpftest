@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -23,7 +23,10 @@ namespace Wpftest1
     /// </summary>
     public partial class MainWindow : Window
     {
-        Socket c = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);   //  创建Socket
+        const int port = 4001;
+        const string host = "192.168.0.178";
+        TcpClientSocket client = new TcpClientSocket(port ,host);   //  创建TcpClientSocket
+        //TcpClient client = new TcpClient();
         Boolean cd=false;
         public MainWindow()
         {
@@ -36,19 +39,15 @@ namespace Wpftest1
             
                 try
                 {
-                    int port = 4001;
-                    string host = "192.168.0.178";
-                    //创建终结点EndPoint
-                    IPAddress ip = IPAddress.Parse(host);
-                    IPEndPoint ipe = new IPEndPoint(ip, port);   //把ip和端口转化为IPEndPoint的实例
-
+                    
                     //创建Socket并连接到服务器
 
                     Console.WriteLine("Connecting...");
-                    c.Connect(ipe); //连接到服务器
-                
+                //client.Connect(ipe); //连接到服务器
+                client.Connect();
 
-                }
+
+            }
                 catch (ArgumentException ae)
                 {
                     Console.WriteLine("argumentNullException:{0}", ae);
@@ -77,7 +76,7 @@ namespace Wpftest1
                 }
                 Console.WriteLine("{0}", oo);    //回显服务器的返回信息
                 Console.WriteLine("Send message");
-                c.Send(bs, bs.Length, 0); //发送信息到服务器端
+                client.socketOne.Send(bs, bs.Length, 0); //发送信息到服务器端
         }
              catch (ArgumentException ae)
             {
@@ -96,7 +95,7 @@ namespace Wpftest1
                 Console.WriteLine("Recieving message");
                 byte[] recvBytes = new byte[1000];
                 int bytes;
-                bytes = c.Receive(recvBytes, recvBytes.Length, 0);    //从服务器端接受返回信息
+                bytes = client.socketOne.Receive(recvBytes, recvBytes.Length, 0);    //从服务器端接受返回信息
                                                                       //recvStr += Encoding.ASCII.GetString(recvBytes, 0, bytes);
                 Console.WriteLine("client get message");    //回显服务器的返回信息
                 string oo = "";
@@ -122,6 +121,13 @@ namespace Wpftest1
         private void Window_MouseMove(object sender, MouseEventArgs e)
         {
             this.Title = e.GetPosition(this).ToString();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+#if DEBUG
+            Console.WriteLine(Thread.GetDomain());
+#endif
         }
     }
 }

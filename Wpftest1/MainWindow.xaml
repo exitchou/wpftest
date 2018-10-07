@@ -62,7 +62,7 @@
         </Rectangle>
         <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="40,64,0,0" VerticalAlignment="Top" Width="74" Click="btnSend_Click"/>
         <Button x:Name="button1" Content="Recieve" HorizontalAlignment="Left" Margin="40,101,0,0" VerticalAlignment="Top" Width="76" Click="button1_Click"/>
-        <Button x:Name="button" HorizontalAlignment="Left" Margin="398,56,0,0" VerticalAlignment="Top" Width="84" Height="67">
+        <Button x:Name="button" HorizontalAlignment="Left" Margin="398,56,0,0" VerticalAlignment="Top" Width="84" Height="67" Click="button_Click">
             <StackPanel Height="52" Width="58">
                 <Ellipse Fill="Red" Height="24" Margin="0,0,10,0"/>
                 <Ellipse Fill="Red" Height="16" Margin="0,0,10,0"/>
