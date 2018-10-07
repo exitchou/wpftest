@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpftest1"
-        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="Wpftest1.MainWindow"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" xmlns:Properties="clr-namespace:Wpftest1.Properties" x:Class="Wpftest1.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" MouseMove="Window_MouseMove">
     <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         <Storyboard x:Key="Storyboard1">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rectangle">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="60.226"/>
@@ -41,7 +42,7 @@
             </Button.RenderTransform>
         </Button>
         <TextBlock x:Name="textBlock" Height="17.5" Margin="187.5,62.5,257,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Right" Height="40" Margin="0,54,165,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="59"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Right" Height="20" Margin="0,27,163,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="60"/>
         <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="59.5,135.5,0,155" Width="66.5" Background="#FFB8C754"/>
         <ed:RegularPolygon Fill="#FFF04D0F" InnerRadius="0.47211" Margin="182.5,101,226,127" PointCount="5" Stretch="Fill"/>
         <ed:Arc ArcThickness="0" ArcThicknessUnit="Pixel" EndAngle="90" Fill="#FFF05419" HorizontalAlignment="Right" Margin="0,132.5,113.5,120" Stretch="None" StartAngle="0" Width="73" Stroke="#FFCD4C4C"/>
@@ -61,12 +62,13 @@
             </Rectangle.RenderTransform>
         </Rectangle>
         <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="40,64,0,0" VerticalAlignment="Top" Width="74" Click="btnSend_Click"/>
-        <Button x:Name="button1" Content="Recieve" HorizontalAlignment="Left" Margin="40,101,0,0" VerticalAlignment="Top" Width="76" Click="button1_Click"/>
+        <Button x:Name="buttonReceive" Content="Receive" HorizontalAlignment="Left" Margin="40,101,0,0" VerticalAlignment="Top" Width="76" />
         <Button x:Name="button" HorizontalAlignment="Left" Margin="398,56,0,0" VerticalAlignment="Top" Width="84" Height="67" Click="button_Click">
             <StackPanel Height="52" Width="58">
                 <Ellipse Fill="Red" Height="24" Margin="0,0,10,0"/>
                 <Ellipse Fill="Red" Height="16" Margin="0,0,10,0"/>
             </StackPanel>
         </Button>
+        <Label x:Name="labelConnected" Content="#FFC73B3B" HorizontalAlignment="Left" Margin="398,21,0,0" VerticalAlignment="Top" Background="{Binding Content, ElementName=labelConnected}" Width="67" Foreground="{Binding Content, ElementName=labelConnected}" DataContext="{Binding Content, ElementName=labelConnected}" DataContextChanged="labelConnected_DataContextChanged"/>
     </Grid>
 </Window>
