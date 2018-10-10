@@ -41,11 +41,8 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <TextBlock x:Name="textBlock" Height="17.5" Margin="187.5,62.5,257,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Right" Height="20" Margin="0,27,163,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="60"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="59.5,135.5,0,0" Width="41.5" Background="#FFB8C754" Height="211.5" VerticalAlignment="Top"/>
-        <ed:RegularPolygon Fill="#FFF04D0F" InnerRadius="0.47211" Margin="182.5,101,349,0" PointCount="5" Stretch="Fill" Height="205" VerticalAlignment="Top"/>
-        <ed:Arc ArcThickness="0" ArcThicknessUnit="Pixel" EndAngle="90" Fill="#FFF05419" HorizontalAlignment="Right" Margin="0,132.5,113.5,120" Stretch="None" StartAngle="0" Width="73" Stroke="#FFCD4C4C"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="1088,15,-138,0" Width="42" Background="#FFB8C754" Height="212" VerticalAlignment="Top"/>
+        <ed:RegularPolygon Fill="#FFF04D0F" InnerRadius="0.47211" Margin="1046,74,-515,0" PointCount="5" Stretch="Fill" Height="205" VerticalAlignment="Top"/>
         <ListBox x:Name="listBox" Height="56.5" Margin="0,0,101.5,64.197" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="85">
             <ListBoxItem Content="ListBoxItem1" Background="#FFA8BF13"/>
             <ListBoxItem Content="ListBoxItem2" Background="#FFB81E1E"/>
@@ -63,84 +60,79 @@
         </Rectangle>
         <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="40,64,0,0" VerticalAlignment="Top" Width="74" Click="btnSend_Click"/>
         <Button x:Name="buttonReceive" Content="Receive" HorizontalAlignment="Left" Margin="40,101,0,0" VerticalAlignment="Top" Width="76" />
-        <Button x:Name="button" HorizontalAlignment="Left" Margin="398,56,0,0" VerticalAlignment="Top" Width="84" Height="67" Click="button_Click">
+        <Button x:Name="button" HorizontalAlignment="Left" Margin="1088,-108,-180,0" VerticalAlignment="Top" Width="84" Height="68" Click="button_Click">
             <StackPanel Height="52" Width="58">
                 <Ellipse Fill="Red" Height="24" Margin="0,0,10,0"/>
                 <Ellipse Fill="Red" Height="16" Margin="0,0,10,0"/>
             </StackPanel>
         </Button>
-        <Label x:Name="labelConnected1" Content="#FFC73B3B" HorizontalAlignment="Left" Margin="398,21,0,0" VerticalAlignment="Top" Background="{Binding Content, ElementName=labelConnected1}" Width="67" Foreground="{Binding Content, ElementName=labelConnected1}" DataContext="{Binding Content, ElementName=labelConnected1}" DataContextChanged="labelConnected_DataContextChanged"/>
-        <WrapPanel Margin="484,394,407.333,16">
-            <CheckBox x:Name="checkBox" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy16" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy17" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy1" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy18" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy2" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy19" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy3" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy20" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy4" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy21" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy5" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy22" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy6" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy23" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy7" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy24" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy8" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy25" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy9" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy26" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy10" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy27" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy11" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy28" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy12" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy29" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy13" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy30" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy14" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy31" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy15" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy32" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy16" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy33" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy17" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy34" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy18" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy35" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy19" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy36" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy20" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy37" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy21" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy38" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy22" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy39" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy23" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy40" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy24" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy41" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy25" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy42" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy26" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy43" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy27" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy44" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy28" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy45" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy29" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy46" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy30" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy47" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy31" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy48" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy32" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy49" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
-            <CheckBox x:Name="checkBox_Copy33" Content="I0.1" Height="16" Width="16"/>
-            <TextBlock x:Name="textBlock_Copy50" HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+        <Label x:Name="labelConnected1" Content="#FFC73B3B" HorizontalAlignment="Left" Margin="126,33,0,0" VerticalAlignment="Top" Background="{Binding Content, ElementName=labelConnected1}" Width="68" Foreground="{Binding Content, ElementName=labelConnected1}" DataContext="{Binding Content, ElementName=labelConnected1}" DataContextChanged="labelConnected_DataContextChanged"/>
+        <WrapPanel Margin="484,334,407,46">
+            <TextBox x:Name="TextBox_Copy16" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O1" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy18" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O2" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy19" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O3" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy20" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O4" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy21" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O5" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy22" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O6" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy23" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O7" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy24" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O8" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy25" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O9" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy26" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O10" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy27" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O11" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy28" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O12" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy29" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O13" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy30" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O14" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy31" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O15" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy32" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O16" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy33" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O17" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy34" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O18" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy35" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O19" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy36" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O20" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy37" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O21" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy38" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O22" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy39" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O23" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy40" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O24" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy41" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O25" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy42" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O26" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy43" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O27" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy44" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O28" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy45" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O29" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy46" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O30" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy47" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O31" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+            <TextBox x:Name="TextBox_Copy48" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
+            <CheckBox x:Name="checkBox_O32" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
+
         </WrapPanel>
         <Grid HorizontalAlignment="Left" Margin="165.334,319.94,0,162.58" Width="206.833">
             <Grid.ColumnDefinitions>
@@ -201,11 +193,45 @@
             <CheckBox x:Name="checkBox15" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,9,0,0" Click="checkBox15_Click" Width="16" Grid.Row="14"/>
             <CheckBox x:Name="checkBox16" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,13,0,0" Click="checkBox16_Click" Width="16" Grid.Row="15"/>
         </Grid>
-        <ListBox x:Name="listBox1" HorizontalAlignment="Right" Height="30.001" Margin="0,0,186.5,392.666" VerticalAlignment="Bottom" Width="133.5">
-            <CheckBox/>
-            <CheckBox/>
-            <CheckBox/>
-            <CheckBox/>
-        </ListBox>
+        <StackPanel HorizontalAlignment="Left" Height="86" Margin="241,38,0,0" VerticalAlignment="Top" Width="59">
+            <TextBlock x:Name="textBlock_Copy" Height="18" TextWrapping="Wrap" Text="源CANID" VerticalAlignment="Top" HorizontalAlignment="Left" Width="31"/>
+            <ComboBox x:Name="comboBox_source" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="57" SelectionChanged="comboBox_SelectionChanged" SelectedIndex="1">
+                <TextBlock Text="0"/>
+                <TextBlock Text="1"/>
+                <TextBlock Text="2"/>
+                <TextBlock Text="3"/>
+                <TextBlock Text="4"/>
+                <TextBlock Text="5"/>
+                <TextBlock Text="6"/>
+                <TextBlock Text="7"/>
+                <TextBlock Text="8"/>
+                <TextBlock Text="9"/>
+                <TextBlock Text="10"/>
+                <TextBlock Text="11"/>
+                <TextBlock Text="12"/>
+                <TextBlock Text="13"/>
+                <TextBlock Text="14"/>
+                <TextBlock Text="15"/>
+            </ComboBox>
+            <TextBlock x:Name="textBlock" Height="18" TextWrapping="Wrap" Text="目标CANID" VerticalAlignment="Top" HorizontalAlignment="Left" Width="31"/>
+            <ComboBox x:Name="comboBox_destination" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="57" SelectedIndex="2">
+                <TextBlock Text="0"/>
+                <TextBlock Text="1"/>
+                <TextBlock Text="2"/>
+                <TextBlock Text="3"/>
+                <TextBlock Text="4"/>
+                <TextBlock Text="5"/>
+                <TextBlock Text="6"/>
+                <TextBlock Text="7"/>
+                <TextBlock Text="8"/>
+                <TextBlock Text="9"/>
+                <TextBlock Text="10"/>
+                <TextBlock Text="11"/>
+                <TextBlock Text="12"/>
+                <TextBlock Text="13"/>
+                <TextBlock Text="14"/>
+                <TextBlock Text="15"/>
+            </ComboBox>
+        </StackPanel>
     </Grid>
 </Window>

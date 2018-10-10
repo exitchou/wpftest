@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -24,6 +25,8 @@ namespace Wpftest1
     /// </summary>
     public partial class MainWindow : Window
     {
+        DispatcherTimer dispatcherTimer = new DispatcherTimer();
+
         const int port = 4001;
         const string host = "192.168.0.178";
         byte canBS0, canBS1;
@@ -35,8 +38,122 @@ namespace Wpftest1
         public MainWindow()
         {
             InitializeComponent();
+            //定时查询-定时器
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = TimeSpan.FromMilliseconds(100);//100ms
+            dispatcherTimer.Start();
+        }
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            if ((string)labelConnected1.Content == "#FF3EC30D") sendSocket();//执行查询
         }
 
+        private void sendSocket()
+        {
+                     
+                try
+                {
+                    //向服务器发送信息
+
+                    if (checkBox1.IsChecked == true) canBS0 |= 1;
+                    else canBS0 &= 0xfe;
+
+
+
+                    if (checkBox2.IsChecked == true) canBS0 |= 2;
+                    else canBS0 &= 0xfd;
+
+
+
+                    if (checkBox3.IsChecked == true) canBS0 |= 4;
+                    else canBS0 &= 0xfb;
+
+
+                    if (checkBox4.IsChecked == true) canBS0 |= 8;
+                    else canBS0 &= 0xf7;
+
+
+                    if (checkBox5.IsChecked == true) canBS0 |= 16;
+                    else canBS0 &= 0xef;
+
+
+                    if (checkBox6.IsChecked == true) canBS0 |= 32;
+                    else canBS0 &= 0xdf;
+
+
+                    if (checkBox7.IsChecked == true) canBS0 |= 64;
+                    else canBS0 &= 0xbf;
+
+
+                    if (checkBox8.IsChecked == true) canBS0 |= 128;
+                    else canBS0 &= 0x7f;
+
+
+                    if (checkBox9.IsChecked == true) canBS1 |= 1;
+                    else canBS1 &= 0xfe;
+
+
+
+                    if (checkBox10.IsChecked == true) canBS1 |= 2;
+                    else canBS1 &= 0xfd;
+
+
+
+                    if (checkBox11.IsChecked == true) canBS1 |= 4;
+                    else canBS1 &= 0xfb;
+
+
+                    if (checkBox12.IsChecked == true) canBS1 |= 8;
+                    else canBS1 &= 0xf7;
+
+
+                    if (checkBox13.IsChecked == true) canBS1 |= 16;
+                    else canBS1 &= 0xef;
+
+
+                    if (checkBox14.IsChecked == true) canBS1 |= 32;
+                    else canBS1 &= 0xdf;
+
+
+                    if (checkBox15.IsChecked == true) canBS1 |= 64;
+                    else canBS1 &= 0xbf;
+                    if (checkBox16.IsChecked == true) canBS1 |= 128;
+                    else canBS1 &= 0x7f;
+
+                    bs[8] = canBS0;
+                    bs[9] = canBS1;
+                    int des = comboBox_destination.SelectedIndex;
+                    bs[6] = (byte)(des / 256 % 256);
+                    bs[7] = (byte)(des % 256);
+                    byte ox = bs[0];
+                    for (int i = 1; i < 19; i++)
+                    {
+                        ox ^= bs[i];
+
+                    }
+                    bs[19] = ox;
+
+                    string oo = "";
+                    foreach (byte r in bs)
+                    {
+
+                        oo = oo + "-" + r.ToString("X");
+
+                    }
+                    Console.WriteLine("{0}", oo);    //回显服务器的返回信息
+                    Console.WriteLine("Send message");
+                    client.socketOne.Send(bs, bs.Length, SocketFlags.None);
+                }
+                catch (ArgumentException ae)
+                {
+                    Console.WriteLine("argumentNullException:{0}", ae);
+                }
+                catch (SocketException ae)
+                {
+                    Console.WriteLine("SocketException:{0}", ae);
+                }
+            
+        }
         private void buttonct_Click(object sender, RoutedEventArgs e)
         {
 
@@ -67,7 +184,7 @@ namespace Wpftest1
 
         }
 
-        private void btnSend_Click(object sender, RoutedEventArgs e)
+       /* private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -75,6 +192,9 @@ namespace Wpftest1
 
                 bs[8] = canBS0;
                 bs[9] = canBS1;
+                int des= comboBox_destination.SelectedIndex;
+                bs[6] = (byte)(des /256%256);
+                bs[7] = (byte)(des % 256);
                 byte ox = bs[0];
                 for (int i = 1; i < 19; i++)
                 {
@@ -103,6 +223,8 @@ namespace Wpftest1
                 Console.WriteLine("SocketException:{0}", ae);
             }
         }
+        */
+
         /*
         private void button1_Click(object sender, RoutedEventArgs e)
         {
@@ -272,7 +394,12 @@ namespace Wpftest1
             else canBS1 &= 0xbf;
         }
 
- 
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+
 
         private void checkBox16_Click(object sender, RoutedEventArgs e)
         {
