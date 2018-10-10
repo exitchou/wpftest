@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Wpftest1"
         xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" xmlns:Properties="clr-namespace:Wpftest1.Properties" x:Class="Wpftest1.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1000" Width="1000" MouseMove="Window_MouseMove">
+        Title="MainWindow" Height="1000" Width="1000" MouseMove="Window_MouseMove" Closing="Window_Closing">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         <Storyboard x:Key="Storyboard1">
@@ -58,7 +58,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="40,64,0,0" VerticalAlignment="Top" Width="74" Click="btnSend_Click"/>
+        <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="40,64,0,0" VerticalAlignment="Top" Width="74"/>
         <Button x:Name="buttonReceive" Content="Receive" HorizontalAlignment="Left" Margin="40,101,0,0" VerticalAlignment="Top" Width="76" />
         <Button x:Name="button" HorizontalAlignment="Left" Margin="1088,-108,-180,0" VerticalAlignment="Top" Width="84" Height="68" Click="button_Click">
             <StackPanel Height="52" Width="58">
@@ -66,7 +66,7 @@
                 <Ellipse Fill="Red" Height="16" Margin="0,0,10,0"/>
             </StackPanel>
         </Button>
-        <Label x:Name="labelConnected1" Content="#FFC73B3B" HorizontalAlignment="Left" Margin="126,33,0,0" VerticalAlignment="Top" Background="{Binding Content, ElementName=labelConnected1}" Width="68" Foreground="{Binding Content, ElementName=labelConnected1}" DataContext="{Binding Content, ElementName=labelConnected1}" DataContextChanged="labelConnected_DataContextChanged"/>
+        <Label x:Name="labelConnected1" Content="#FFC73B3B" HorizontalAlignment="Left" Margin="126,33,0,0" VerticalAlignment="Top" Background="{Binding Content, ElementName=labelConnected1}" Width="68" Foreground="{Binding Content, ElementName=labelConnected1}" DataContext="{Binding Content, ElementName=labelConnected1}"/>
         <WrapPanel Margin="484,334,407,46">
             <TextBox x:Name="TextBox_Copy16" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="信号" VerticalAlignment="Top" Width="69" FontSize="9.333"/>
             <CheckBox x:Name="checkBox_O1" Content="I0.1" Height="18" Width="16" IsEnabled="False"/>
@@ -176,26 +176,26 @@
             <TextBox x:Name="textBox1_Copy14" Margin="10,10,18.833,2.277" TextWrapping="Wrap" Text="指令" FontSize="9.333" Grid.Column="1" Grid.Row="13"/>
             <TextBox x:Name="textBox1_Copy15" Margin="10,10,18.833,2.277" TextWrapping="Wrap" Text="指令" FontSize="9.333" Grid.Column="1" Grid.Row="14"/>
             <TextBox x:Name="textBox1_Copy16" Margin="10,10,18.833,2.277" TextWrapping="Wrap" Text="指令" FontSize="9.333" Grid.Column="1" Grid.Row="15"/>
-            <CheckBox x:Name="checkBox1" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,7,0,0" Click="checkBox1_Click" Width="16"/>
-            <CheckBox x:Name="checkBox2" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,8,0,0" Click="checkBox2_Click" Width="16" Grid.Row="1"/>
-            <CheckBox x:Name="checkBox3" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,7,0,0" Click="checkBox3_Click" Width="16" Grid.Row="2"/>
-            <CheckBox x:Name="checkBox4" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,11,0,0" Click="checkBox4_Click" Width="16" Grid.Row="3"/>
-            <CheckBox x:Name="checkBox5" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,11,0,0" Click="checkBox5_Click" Width="16" Grid.Row="4"/>
-            <CheckBox x:Name="checkBox6" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,10,0,0" Click="checkBox6_Click" Width="16" Grid.Row="5"/>
-            <CheckBox x:Name="checkBox7" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,8,0,0" Click="checkBox7_Click" Width="16" Grid.Row="6"/>
-            <CheckBox x:Name="checkBox8" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,9,0,0" Click="checkBox8_Click" Width="16" Grid.Row="7"/>
-            <CheckBox x:Name="checkBox9" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,7,0,0" Click="checkBox9_Click" Width="16" Grid.Row="8"/>
-            <CheckBox x:Name="checkBox10" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,11,0,0" Click="checkBox10_Click" Width="16" Grid.Row="9"/>
-            <CheckBox x:Name="checkBox11" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,11,0,0" Click="checkBox11_Click" Width="16" Grid.Row="10"/>
-            <CheckBox x:Name="checkBox12" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,10,0,0" Click="checkBox12_Click" Width="16" Grid.Row="11"/>
-            <CheckBox x:Name="checkBox13" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,10,0,0" Click="checkBox13_Click" Width="16" Grid.Row="12"/>
-            <CheckBox x:Name="checkBox14" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,11,0,0" Click="checkBox14_Click" Width="16" Grid.Row="13"/>
-            <CheckBox x:Name="checkBox15" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,9,0,0" Click="checkBox15_Click" Width="16" Grid.Row="14"/>
-            <CheckBox x:Name="checkBox16" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,13,0,0" Click="checkBox16_Click" Width="16" Grid.Row="15"/>
+            <CheckBox x:Name="checkBox1" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,7,0,0" Width="16"/>
+            <CheckBox x:Name="checkBox2" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,8,0,0" Width="16" Grid.Row="1"/>
+            <CheckBox x:Name="checkBox3" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,7,0,0" Width="16" Grid.Row="2"/>
+            <CheckBox x:Name="checkBox4" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,11,0,0" Width="16" Grid.Row="3"/>
+            <CheckBox x:Name="checkBox5" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,11,0,0" Width="16" Grid.Row="4"/>
+            <CheckBox x:Name="checkBox6" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,10,0,0" Width="16" Grid.Row="5"/>
+            <CheckBox x:Name="checkBox7" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,8,0,0" Width="16" Grid.Row="6"/>
+            <CheckBox x:Name="checkBox8" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,9,0,0" Width="16" Grid.Row="7"/>
+            <CheckBox x:Name="checkBox9" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,7,0,0"  Width="16" Grid.Row="8"/>
+            <CheckBox x:Name="checkBox10" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,11,0,0"  Width="16" Grid.Row="9"/>
+            <CheckBox x:Name="checkBox11" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,11,0,0"  Width="16" Grid.Row="10"/>
+            <CheckBox x:Name="checkBox12" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,10,0,0"  Width="16" Grid.Row="11"/>
+            <CheckBox x:Name="checkBox13" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,10,0,0"  Width="16" Grid.Row="12"/>
+            <CheckBox x:Name="checkBox14" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,11,0,0"  Width="16" Grid.Row="13"/>
+            <CheckBox x:Name="checkBox15" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,9,0,0"  Width="16" Grid.Row="14"/>
+            <CheckBox x:Name="checkBox16" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,13,0,0"  Width="16" Grid.Row="15"/>
         </Grid>
         <StackPanel HorizontalAlignment="Left" Height="86" Margin="241,38,0,0" VerticalAlignment="Top" Width="59">
             <TextBlock x:Name="textBlock_Copy" Height="18" TextWrapping="Wrap" Text="源CANID" VerticalAlignment="Top" HorizontalAlignment="Left" Width="31"/>
-            <ComboBox x:Name="comboBox_source" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="57" SelectionChanged="comboBox_SelectionChanged" SelectedIndex="1">
+            <ComboBox x:Name="comboBox_source" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="57" SelectedIndex="1">
                 <TextBlock Text="0"/>
                 <TextBlock Text="1"/>
                 <TextBlock Text="2"/>
