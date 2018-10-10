@@ -28,18 +28,21 @@ namespace Wpftest1
     {
         private System.Timers.Timer aTimer = null;
         private delegate void TimerDispatcherDelegate();
-        const int port = 4001;
-        const string host = "192.168.0.178";
+        
+        
         bool socketConnected;
         byte canBS0, canBS1;
         byte[] bs = { 0xFE, 0xFD, 0x0, 0x8, 0x0, 0x0, 0x0, 0x1, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0a }; //FE - FD - 0 - 8 - 0 - 0 - 0 - 1 - 0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - F2 - E2 - 28 - 32
-        TcpClientSocket client = new TcpClientSocket(port, host);   //  创建TcpClientSocket
+        TcpClientSocket client;// = new TcpClientSocket(port, host);   //  创建TcpClientSocket
                                                                     //TcpClient client = new TcpClient();
         Thread tR;
 
         public MainWindow()
         {
             InitializeComponent();
+            int port;
+            int.TryParse(textBox_port.Text, out port);
+            client = new TcpClientSocket(port, textBox_host.Text);
             socketConnected = false;
             //定时查询-定时器
             aTimer = new System.Timers.Timer(100);
@@ -251,18 +254,72 @@ namespace Wpftest1
                 Console.WriteLine("SocketException:{0}", ae);
             }
         }*/
-        static void sockRecieve(object TcpCS)
+        void sockRecieve(object TcpCS)
         {
             try
             {
                 while (1 == 1)
                 {
                     Console.WriteLine("Recieving message");
-                    byte[] recvBytes = new byte[1000];
+                    byte[] recvBytes = new byte[20];
                     int bytes;
                     TcpClientSocket tcpc = (TcpClientSocket)TcpCS;
                     bytes = tcpc.socketOne.Receive(recvBytes, recvBytes.Length, 0);    //从服务器端接受返回信息
                                                                                        //recvStr += Encoding.ASCII.GetString(recvBytes, 0, bytes);
+                    this.Dispatcher.Invoke(new Action(() => {
+
+
+                        int src = comboBox_destination.SelectedIndex;
+                        byte ox = recvBytes[0];
+                        if (recvBytes[6] == (byte)(src / 256 % 256) && recvBytes[7] == (byte)(src % 256))
+                        {
+                            for (int i = 1; i < 19; i++)
+                            {
+                                ox ^= recvBytes[i];
+
+                            }
+                            if (recvBytes[19] == ox)
+                            {
+
+                                if ((recvBytes[8] & 1) == 0) this.checkBox_O1.IsChecked = false; else this.checkBox_O1.IsChecked = true;
+                                if ((recvBytes[8] & 2) == 0) this.checkBox_O2.IsChecked = false; else this.checkBox_O2.IsChecked = true;
+                                if ((recvBytes[8] & 4) == 0) this.checkBox_O3.IsChecked = false; else this.checkBox_O3.IsChecked = true;
+                                if ((recvBytes[8] & 8) == 0) this.checkBox_O4.IsChecked = false; else this.checkBox_O4.IsChecked = true;
+                                if ((recvBytes[8] & 16) == 0) this.checkBox_O5.IsChecked = false; else this.checkBox_O5.IsChecked = true;
+                                if ((recvBytes[8] & 32) == 0) this.checkBox_O6.IsChecked = false; else this.checkBox_O6.IsChecked = true;
+                                if ((recvBytes[8] & 64) == 0) this.checkBox_O7.IsChecked = false; else this.checkBox_O7.IsChecked = true;
+                                if ((recvBytes[8] & 128) == 0) this.checkBox_O8.IsChecked = false; else this.checkBox_O8.IsChecked = true;
+                                if ((recvBytes[9] & 1) == 0) this.checkBox_O9.IsChecked = false; else this.checkBox_O9.IsChecked = true;
+                                if ((recvBytes[9] & 2) == 0) this.checkBox_O10.IsChecked = false; else this.checkBox_O10.IsChecked = true;
+                                if ((recvBytes[9] & 4) == 0) this.checkBox_O11.IsChecked = false; else this.checkBox_O11.IsChecked = true;
+                                if ((recvBytes[9] & 8) == 0) this.checkBox_O12.IsChecked = false; else this.checkBox_O12.IsChecked = true;
+                                if ((recvBytes[9] & 16) == 0) this.checkBox_O13.IsChecked = false; else this.checkBox_O13.IsChecked = true;
+                                if ((recvBytes[9] & 32) == 0) this.checkBox_O14.IsChecked = false; else this.checkBox_O14.IsChecked = true;
+                                if ((recvBytes[9] & 64) == 0) this.checkBox_O15.IsChecked = false; else this.checkBox_O15.IsChecked = true;
+                                if ((recvBytes[9] & 128) == 0) this.checkBox_O16.IsChecked = false; else this.checkBox_O16.IsChecked = true;
+                                if ((recvBytes[10] & 1) == 0) this.checkBox_O17.IsChecked = false; else this.checkBox_O17.IsChecked = true;
+                                if ((recvBytes[10] & 2) == 0) this.checkBox_O18.IsChecked = false; else this.checkBox_O18.IsChecked = true;
+                                if ((recvBytes[10] & 4) == 0) this.checkBox_O19.IsChecked = false; else this.checkBox_O19.IsChecked = true;
+                                if ((recvBytes[10] & 8) == 0) this.checkBox_O20.IsChecked = false; else this.checkBox_O20.IsChecked = true;
+                                if ((recvBytes[10] & 16) == 0) this.checkBox_O21.IsChecked = false; else this.checkBox_O21.IsChecked = true;
+                                if ((recvBytes[10] & 32) == 0) this.checkBox_O22.IsChecked = false; else this.checkBox_O22.IsChecked = true;
+                                if ((recvBytes[10] & 64) == 0) this.checkBox_O23.IsChecked = false; else this.checkBox_O23.IsChecked = true;
+                                if ((recvBytes[10] & 128) == 0) this.checkBox_O24.IsChecked = false; else this.checkBox_O24.IsChecked = true;
+                                if ((recvBytes[11] & 1) == 0) this.checkBox_O25.IsChecked = false; else this.checkBox_O25.IsChecked = true;
+                                if ((recvBytes[11] & 2) == 0) this.checkBox_O26.IsChecked = false; else this.checkBox_O26.IsChecked = true;
+                                if ((recvBytes[11] & 4) == 0) this.checkBox_O27.IsChecked = false; else this.checkBox_O27.IsChecked = true;
+                                if ((recvBytes[11] & 8) == 0) this.checkBox_O28.IsChecked = false; else this.checkBox_O28.IsChecked = true;
+                                if ((recvBytes[11] & 16) == 0) this.checkBox_O29.IsChecked = false; else this.checkBox_O29.IsChecked = true;
+                                if ((recvBytes[11] & 32) == 0) this.checkBox_O30.IsChecked = false; else this.checkBox_O30.IsChecked = true;
+                                if ((recvBytes[11] & 64) == 0) this.checkBox_O31.IsChecked = false; else this.checkBox_O31.IsChecked = true;
+                                if ((recvBytes[11] & 128) == 0) this.checkBox_O32.IsChecked = false; else this.checkBox_O32.IsChecked = true;
+                            }
+
+                        }
+
+                    }));
+
+
                     Console.WriteLine("client get message");    //回显服务器的返回信息
                     string oo = "";
                     foreach (byte r in recvBytes)
@@ -296,29 +353,5 @@ namespace Wpftest1
 #endif
         }
 
-
-
-
-
-
-
-
-
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (client.socketOne.Connected)client.socketOne.Disconnect(true);
-
-            aTimer.Dispose();
-            tR.Abort();
-
-        }
-
-
-        private void checkBox16_Click(object sender, RoutedEventArgs e)
-        {
-            if (checkBox16.IsChecked == true) canBS1 |= 128;
-            else canBS1 &= 0x7f;
-        }
     }
 }
